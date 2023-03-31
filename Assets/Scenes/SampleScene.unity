@@ -973,7 +973,7 @@ MonoBehaviour:
   tails:
   - {fileID: 401043977}
   - {fileID: 1120224254}
-  boneDistance: 1000
+  boneDistance: 1
   bonePref: {fileID: 3957481487317746678, guid: 731b8f1645d5549e69c06ba77fd31406, type: 3}
   speed: 0.025
 --- !u!1 &705507993
@@ -1367,11 +1367,11 @@ GameObject:
   - component: {fileID: 1037715036}
   m_Layer: 0
   m_Name: Food
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1037715034
 Transform:
   m_ObjectHideFlags: 0

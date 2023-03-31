@@ -41,6 +41,7 @@ public class SnakeController : MonoBehaviour
                 var temp = bone.position;
                 bone.position = previousBonePosition;
                 previousBonePosition = temp;
+                
             }
            
         }
