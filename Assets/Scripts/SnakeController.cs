@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
 
 
@@ -22,7 +23,7 @@ public class SnakeController : MonoBehaviour
         _transform = GetComponent<Transform>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         MoveSnake(_transform.position + _transform.forward * speed);
         float angel = Input.GetAxis("Horizontal") * 1;
@@ -43,11 +44,22 @@ public class SnakeController : MonoBehaviour
         }
         _transform.position = newPosition;
     }
-    /*
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Food"))
-            Debug.Log("gtght");
+        if (other.gameObject.CompareTag("Food") )
+        {
+            Food.Instance.Spawn();
+        }
+        else
+        {
+            Death();
+        }
+
     }
-    */
+    private void Death()
+    {
+        Debug.Log("Death");
+    }
+    
 }

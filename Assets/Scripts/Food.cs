@@ -8,11 +8,13 @@ public class Food : MonoBehaviour
     private GameObject innerWalls;
     [SerializeField] 
     private BoxCollider gridArea;
+    public static Food Instance { get; set; }
     private void Start()
     {
+        Instance = this;
         Spawn();
     }
-    private void Spawn()
+    public void Spawn()
     {
         Bounds bounds = this.gridArea.bounds;
         float x = Random.Range(bounds.min.x, bounds.max.x);
@@ -27,13 +29,5 @@ public class Food : MonoBehaviour
                 Spawn();
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Spawn();
-            Debug.Log("Trigger");
-        }
-    }
+    
 }
