@@ -38,13 +38,16 @@ public class SnakeController : MonoBehaviour
         {
             if ((bone.position - previousBonePosition).sqrMagnitude > sqrDistance)
             {
-                var temp = bone.position;
-                bone.position = previousBonePosition;
-                previousBonePosition = temp;
-                
+                (bone.position, previousBonePosition) = (previousBonePosition, bone.position);
             }
-           
         }
         _transform.position = newPosition;
     }
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Food"))
+            Debug.Log("gtght");
+    }
+    */
 }

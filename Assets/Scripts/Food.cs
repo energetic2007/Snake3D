@@ -31,6 +31,9 @@ public class Food : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
+        {
             Spawn();
+            Debug.Log("Trigger");
+        }
     }
 }
