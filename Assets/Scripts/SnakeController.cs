@@ -25,9 +25,21 @@ public class SnakeController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoveSnake(_transform.position + _transform.forward * speed);
-        float angel = Input.GetAxis("Horizontal") * 1;
-        _transform.Rotate(0, angel,0);
+        MoveSnake(_transform.position + _transform.forward * (speed * Time.fixedDeltaTime));
+        //float angle = Input.GetAxis("Horizontal") * 1;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp("right"))
+        {
+            _transform.Rotate(0, 90,0);
+        }
+        
+        if (Input.GetKeyUp("left"))
+        {
+            _transform.Rotate(0, -90,0);
+        }
     }
 
     private void MoveSnake(Vector3 newPosition)
